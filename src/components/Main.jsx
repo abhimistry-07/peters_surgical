@@ -1,7 +1,101 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "./Navbar";
 import styled from "styled-components";
 import PurchasedSection from "./PurchasedSection";
+import VerticalBarChart from "./VerticalBarChart";
+
+const data = [
+  {
+    Date: "16/2/23",
+    Month: "Feb",
+    Year: 2023,
+    Supplier: "Adani",
+    Emissions: 2205,
+    Revenue: 220000,
+    E_R: 99.8,
+    MOM: "25%",
+  },
+  {
+    Date: "17/3/23",
+    Month: "Mar",
+    Year: 2023,
+    Supplier: "Reliance",
+    Emissions: 2251,
+    Revenue: 254815,
+    E_R: 113.2,
+    MOM: "28%",
+  },
+  {
+    Date: "6/4/23",
+    Month: "Apr",
+    Year: 2023,
+    Supplier: "Shaurya Drugs",
+    Emissions: 4522,
+    Revenue: 879797,
+    E_R: 194.6,
+    MOM: "-11%",
+  },
+  {
+    Date: "12/5/23",
+    Month: "May",
+    Year: 2023,
+    Supplier: "Orlife Healthcare",
+    Emissions: 8522,
+    Revenue: 464464,
+    E_R: 54.5,
+    MOM: "-67%",
+  },
+  {
+    Date: "11/8/23",
+    Month: "Aug",
+    Year: 2023,
+    Supplier: "Rezicure Pharmaceuticals",
+    Emissions: 1124,
+    Revenue: 548582,
+    E_R: 488.1,
+    MOM: "12%",
+  },
+  {
+    Date: "6/10/23",
+    Month: "Oct",
+    Year: 2023,
+    Supplier: "Steller Bio Labs",
+    Emissions: 4524,
+    Revenue: 516513,
+    E_R: 114.2,
+    MOM: "-20%",
+  },
+  {
+    Date: "8/9/23",
+    Month: "Sep",
+    Year: 2023,
+    Supplier: "Ruzette Organics",
+    Emissions: 7858,
+    Revenue: 564651,
+    E_R: 71.9,
+    MOM: "-58%",
+  },
+  {
+    Date: "11/8/23",
+    Month: "Aug",
+    Year: 2023,
+    Supplier: "Merion Care",
+    Emissions: 5258,
+    Revenue: 565556,
+    E_R: 107.6,
+    MOM: "-5%",
+  },
+  {
+    Date: "10/11/23",
+    Month: "Nov",
+    Year: 2023,
+    Supplier: "Eskos Pharma",
+    Emissions: 4524,
+    Revenue: 546561,
+    E_R: 120.8,
+    MOM: "20%",
+  },
+];
 
 function Main() {
   return (
@@ -30,7 +124,7 @@ function Main() {
         </div>
       </DATE>
       <PurchasedSection />
-      
+      <VerticalBarChart />
     </div>
   );
 }
