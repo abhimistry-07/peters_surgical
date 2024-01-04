@@ -1,6 +1,7 @@
 import React from "react";
 import Sidebar from "../components/Sidebar";
 import styled from "styled-components";
+import Main from "../components/Main";
 
 function HomePage() {
   return (
@@ -15,6 +16,7 @@ function HomePage() {
     //   }}
     >
       <Sidebar />
+      <Main />
     </DIV>
   );
 }
