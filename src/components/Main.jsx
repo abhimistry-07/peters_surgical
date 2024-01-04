@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import styled from "styled-components";
 import PurchasedSection from "./PurchasedSection";
 import VerticalBarChart from "./VerticalBarChart";
+import BottomPart from "./BottomPart";
 
 const allData2023 = [
   {
@@ -279,6 +280,7 @@ function Main() {
       </DATE>
       <PurchasedSection />
       <VerticalBarChart allData2022={allData2022} allData2023={allData2023} />
+      <BottomPart />
     </div>
   );
 }

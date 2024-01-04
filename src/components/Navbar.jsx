@@ -108,7 +108,7 @@ const NAV = styled.div`
   justify-content: space-between;
   align-items: center;
   flex-shrink: 0;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 
   .leftPart {
     display: flex;
