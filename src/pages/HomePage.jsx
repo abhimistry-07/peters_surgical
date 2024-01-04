@@ -1,19 +1,26 @@
 import React from "react";
+import Sidebar from "../components/Sidebar";
+import styled from "styled-components";
 
 function HomePage() {
   return (
-    <div>
-      HomePage
-      <h1
-        className="text-3xl 
-        underline
-        font-bold 
-      "
-      >
-        Hello world!
-      </h1>
-    </div>
+    <DIV
+    //   className="flex"
+    //   style={{
+    //     width: "1440px",
+    //     background:
+    //       "linear-gradient(0deg, rgba(2, 171, 108, 0.04) 0%, rgba(2, 171, 108, 0.04) 100%), #FFF",
+    //     height: "1354px",
+    //     flexShrink: "0",
+    //   }}
+    >
+      <Sidebar />
+    </DIV>
   );
 }
+
+const DIV = styled.div`
+  display: flex;
+`;
 
 export default HomePage;
