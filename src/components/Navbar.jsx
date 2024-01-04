@@ -102,7 +102,7 @@ function Navbar() {
 
 const NAV = styled.div`
   display: flex;
-  width: 1200px;
+  /* width: 1200px; */
   height: 64px;
   padding: 0px 20px;
   justify-content: space-between;
