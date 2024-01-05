@@ -169,7 +169,7 @@ function Sidebar() {
 
 const SideBar = styled.div`
   display: inline-flex;
-  height: 1306px;
+  /* height: 1306px; */
   flex-direction: column;
   align-items: center;
   flex-shrink: 0;

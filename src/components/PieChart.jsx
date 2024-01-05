@@ -266,7 +266,7 @@ const PieContainer = styled.div`
 
   .upperContainer {
     display: flex;
-    width: 459px;
+    /* width: 459px; */
     height: 64px;
     padding: 20px;
     justify-content: space-between;

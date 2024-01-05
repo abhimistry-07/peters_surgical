@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import PieChart from "./PieChart";
+import Table from "./Table";
 
 function BottomPart() {
   return (
@@ -47,8 +48,11 @@ function BottomPart() {
             </div>
           </div>
         </div>
-        <PieChart  />
+        <PieChart />
       </LeftPart>
+      <RightPart>
+        <Table />
+      </RightPart>
     </BottomContainer>
   );
 }
@@ -108,5 +112,7 @@ const LeftPart = styled.div`
     }
   }
 `;
+
+const RightPart = styled.div``;
 
 export default BottomPart;
