@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "./Navbar";
 import styled from "styled-components";
 import PurchasedSection from "./PurchasedSection";
 import VerticalBarChart from "./VerticalBarChart";
 import BottomPart from "./BottomPart";
+import { DateRange } from "react-date-range";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const allData2023 = [
   {
@@ -253,6 +256,25 @@ const allData2022 = [
 ];
 
 function Main() {
+  const defaultStartDate = new Date("2023-03-01");
+  const defaultEndDate = new Date("2023-04-30");
+
+  const [startDate, setStartDate] = useState(defaultStartDate);
+  const [endDate, setEndDate] = useState(defaultEndDate);
+  const [showDatePickers, setShowDatePickers] = useState(false);
+
+  const handleDateChange = (date, isStartDate) => {
+    if (isStartDate) {
+      setStartDate(date);
+    } else {
+      setEndDate(date);
+    }
+  };
+
+  const handleSpanClick = () => {
+    setShowDatePickers((prev) => !prev);
+  };
+
   return (
     <div>
       <Navbar />
@@ -260,10 +282,26 @@ function Main() {
         <div className="innerDiv">
           <p>
             Show Tline:
-            <span>Mar’23 - Apr’23</span>
+            {/* <span>Mar’23 - Apr’23</span> */}
+            <span>
+              {startDate
+                ? `${startDate.toLocaleDateString("en-US", {
+                    month: "short",
+                    year: "2-digit",
+                  })} - ${
+                    endDate
+                      ? endDate.toLocaleDateString("en-US", {
+                          month: "short",
+                          year: "2-digit",
+                        })
+                      : "Present"
+                  }`
+                : ""}
+            </span>
           </p>
           <div className="line"></div>
           <svg
+            onClick={handleSpanClick}
             xmlns="http://www.w3.org/2000/svg"
             width="8"
             height="6"
@@ -276,6 +314,29 @@ function Main() {
               fill-opacity="0.84"
             />
           </svg>
+        </div>
+        <div>
+          {showDatePickers && (
+            <div>
+              <DatePicker
+                selected={startDate}
+                onChange={(date) => handleDateChange(date, true)}
+                selectsStart
+                startDate={startDate}
+                endDate={endDate}
+                placeholderText="Start Date"
+              />
+              <DatePicker
+                selected={endDate}
+                onChange={(date) => handleDateChange(date, false)}
+                selectsEnd
+                startDate={startDate}
+                endDate={endDate}
+                minDate={startDate}
+                placeholderText="End Date"
+              />
+            </div>
+          )}
         </div>
       </DATE>
       <PurchasedSection />
