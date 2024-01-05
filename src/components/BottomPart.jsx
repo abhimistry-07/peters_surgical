@@ -1,49 +1,53 @@
 import React from "react";
 import styled from "styled-components";
+import PieChart from "./PieChart";
 
 function BottomPart() {
   return (
     <BottomContainer>
       <LeftPart>
-        <p>Top 3 Suppliers contributing to Category-1</p>
-        <div className="subContainer">
-          <div className="innerContainer">
-            <div
-              style={{
-                width: 12,
-                height: 12,
-                background: "#7C95EA",
-                borderRadius: 16,
-              }}
-            />
-            <div className="secondDiv">Supplier-1</div>
-            <div className="thirdDiv">64%</div>
-          </div>
-          <div className="innerContainer">
-            <div
-              style={{
-                width: 12,
-                height: 12,
-                background: "#FFC400",
-                borderRadius: 16,
-              }}
-            />
-            <div className="secondDiv">Supplier-2</div>
-            <div className="thirdDiv">32%</div>
-          </div>
-          <div className="innerContainer">
-            <div
-              style={{
-                width: 12,
-                height: 12,
-                background: "#3BB85E",
-                borderRadius: 16,
-              }}
-            />
-            <div className="secondDiv">Supplier-3</div>
-            <div className="thirdDiv">15%</div>
+        <div className="container">
+          <p>Top 3 Suppliers contributing to Category-1</p>
+          <div className="subContainer">
+            <div className="innerContainer">
+              <div
+                style={{
+                  width: 12,
+                  height: 12,
+                  background: "#7C95EA",
+                  borderRadius: 16,
+                }}
+              />
+              <div className="secondDiv">Supplier-1</div>
+              <div className="thirdDiv">64%</div>
+            </div>
+            <div className="innerContainer">
+              <div
+                style={{
+                  width: 12,
+                  height: 12,
+                  background: "#FFC400",
+                  borderRadius: 16,
+                }}
+              />
+              <div className="secondDiv">Supplier-2</div>
+              <div className="thirdDiv">32%</div>
+            </div>
+            <div className="innerContainer">
+              <div
+                style={{
+                  width: 12,
+                  height: 12,
+                  background: "#3BB85E",
+                  borderRadius: 16,
+                }}
+              />
+              <div className="secondDiv">Supplier-3</div>
+              <div className="thirdDiv">15%</div>
+            </div>
           </div>
         </div>
+        <PieChart  />
       </LeftPart>
     </BottomContainer>
   );
@@ -57,46 +61,49 @@ const BottomContainer = styled.div`
 
 const LeftPart = styled.div`
   width: 460px;
-  border-radius: 12px;
-  border: 1px solid #ebebeb;
-  background: #fff;
 
-  p {
-    display: flex;
-    justify-content: flex-start;
-    margin-top: 22px;
-    margin-left: 20px;
-    font-size: 14px;
-    font-weight: 400;
-  }
+  .container {
+    border-radius: 12px;
+    border: 1px solid #ebebeb;
+    background: #fff;
 
-  .subContainer {
-    display: flex;
-    gap: 20px;
-    margin: 20px 0 29px 20px;
-
-    .innerContainer {
+    p {
       display: flex;
-      align-items: center;
-      gap: 8px;
+      justify-content: flex-start;
+      margin-top: 22px;
+      margin-left: 20px;
+      font-size: 14px;
+      font-weight: 400;
+    }
 
-      .secondDiv {
-        color: rgba(0, 0, 0, 0.48);
-        text-align: center;
-        font-family: HelveticaNeue;
-        font-size: 12px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 18px;
-      }
+    .subContainer {
+      display: flex;
+      gap: 20px;
+      margin: 20px 0 29px 20px;
 
-      .thirdDiv {
-        font-family: HelveticaNeue;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 123.321%;
-        color: rgba(0, 0, 0, 0.8);
+      .innerContainer {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        .secondDiv {
+          color: rgba(0, 0, 0, 0.48);
+          text-align: center;
+          font-family: HelveticaNeue;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 18px;
+        }
+
+        .thirdDiv {
+          font-family: HelveticaNeue;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 123.321%;
+          color: rgba(0, 0, 0, 0.8);
+        }
       }
     }
   }
