@@ -186,6 +186,8 @@ const DropdownSelect = styled.select`
   -moz-appearance: none;
   appearance: none;
   width: 130px;
+  font-family: HelveticaNeue;
+
 `;
 
 const DropdownOption = styled.option`

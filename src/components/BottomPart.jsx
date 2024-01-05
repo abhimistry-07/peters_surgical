@@ -3,7 +3,7 @@ import styled from "styled-components";
 import PieChart from "./PieChart";
 import Table from "./Table";
 
-function BottomPart() {
+function BottomPart({allData2023}) {
   return (
     <BottomContainer>
       <LeftPart>
@@ -51,7 +51,7 @@ function BottomPart() {
         <PieChart />
       </LeftPart>
       <RightPart>
-        <Table />
+        <Table allData2023={allData2023}/>
       </RightPart>
     </BottomContainer>
   );

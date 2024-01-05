@@ -1,0 +1,246 @@
+{
+  "allData2023": [
+    {
+      "data_Date": "16/1/23",
+      "data_Month": "Jan",
+      "data_Year": 2023,
+      "data_Supplier": "ABC Corp",
+      "data_Emissions": 200,
+      "data_Revenue": 56789,
+      "data_E_R": 1.5,
+      "data_MOM": "10%↑"
+    },
+    {
+      "data_Date": "16/2/23",
+      "data_Month": "Feb",
+      "data_Year": 2023,
+      "data_Supplier": "Adani",
+      "data_Emissions": 470,
+      "data_Revenue": 220000,
+      "data_E_R": 2.5,
+      "data_MOM": "25%↓"
+    },
+    {
+      "data_Date": "17/3/23",
+      "data_Month": "Mar",
+      "data_Year": 2023,
+      "data_Supplier": "Reliance",
+      "data_Emissions": 700,
+      "data_Revenue": 254815,
+      "data_E_R": 3,
+      "data_MOM": "28%↑"
+    },
+    {
+      "data_Date": "6/4/23",
+      "data_Month": "Apr",
+      "data_Year": 2023,
+      "data_Supplier": "Shaurya Drugs",
+      "data_Emissions": 250,
+      "data_Revenue": 879797,
+      "data_E_R": 4.7,
+      "data_MOM": "-11%↓"
+    },
+    {
+      "data_Date": "12/5/23",
+      "data_Month": "May",
+      "data_Year": 2023,
+      "data_Supplier": "Orlife",
+      "data_Emissions": 290,
+      "data_Revenue": 464464,
+      "data_E_R": 6.5,
+      "data_MOM": "-67%↓"
+    },
+    {
+      "data_Date": "16/6/23",
+      "data_Month": "Jun",
+      "data_Year": 2023,
+      "data_Supplier": "XYZ Ltd",
+      "data_Emissions": 710,
+      "data_Revenue": 150000,
+      "data_E_R": 10,
+      "data_MOM": "-5%↑"
+    },
+    {
+      "data_Date": "18/7/23",
+      "data_Month": "Jul",
+      "data_Year": 2023,
+      "data_Supplier": "LMN Inc",
+      "data_Emissions": 880,
+      "data_Revenue": 200000,
+      "data_E_R": 21,
+      "data_MOM": "12%↓"
+    },
+    {
+      "data_Date": "11/8/23",
+      "data_Month": "Aug",
+      "data_Year": 2023,
+      "data_Supplier": "Tata",
+      "data_Emissions": 640,
+      "data_Revenue": 548582,
+      "data_E_R": 23,
+      "data_MOM": "12%↑"
+    },
+    {
+      "data_Date": "8/9/23",
+      "data_Month": "Sep",
+      "data_Year": 2023,
+      "data_Supplier": "Ruzette",
+      "data_Emissions": 490,
+      "data_Revenue": 564651,
+      "data_E_R": 23,
+      "data_MOM": "-58%↓"
+    },
+    {
+      "data_Date": "6/10/23",
+      "data_Month": "Oct",
+      "data_Year": 2023,
+      "data_Supplier": "Alibaba",
+      "data_Emissions": 190,
+      "data_Revenue": 516513,
+      "data_E_R": 16.5,
+      "data_MOM": "-20%↑"
+    },
+    {
+      "data_Date": "11/8/23",
+      "data_Month": "Nov",
+      "data_Year": 2023,
+      "data_Supplier": "Merion Care",
+      "data_Emissions": 600,
+      "data_Revenue": 565556,
+      "data_E_R": 12.5,
+      "data_MOM": "-5%↓"
+    },
+    {
+      "data_Date": "10/11/23",
+      "data_Month": "Dec",
+      "data_Year": 2023,
+      "data_Supplier": "Eskos Pharma",
+      "data_Emissions": 220,
+      "data_Revenue": 546561,
+      "data_E_R": 6.5,
+      "data_MOM": "20%↑"
+    }
+  ],
+  "allData2022": [
+    {
+      "data_Date": "16/1/22",
+      "data_Month": "Jan",
+      "data_Year": 2022,
+      "data_Supplier": "PQR Ltd",
+      "data_Emissions": 260,
+      "data_Revenue": 80000,
+      "data_E_R": 1.5,
+      "data_MOM": "15%↑"
+    },
+    {
+      "data_Date": "18/2/22",
+      "data_Month": "Feb",
+      "data_Year": 2022,
+      "data_Supplier": "LMN Inc",
+      "data_Emissions": 595,
+      "data_Revenue": 90000,
+      "data_E_R": 2.8,
+      "data_MOM": "10%↑"
+    },
+    {
+      "data_Date": "22/3/22",
+      "data_Month": "Mar",
+      "data_Year": 2022,
+      "data_Supplier": "ABC Corp",
+      "data_Emissions": 900,
+      "data_Revenue": 75000,
+      "data_E_R": 3,
+      "data_MOM": "-8%"
+    },
+    {
+      "data_Date": "6/4/22",
+      "data_Month": "Apr",
+      "data_Year": 2022,
+      "data_Supplier": "XYZ Ltd",
+      "data_Emissions": 260,
+      "data_Revenue": 70000,
+      "data_E_R": 5,
+      "data_MOM": "5%↑"
+    },
+    {
+      "data_Date": "12/5/22",
+      "data_Month": "May",
+      "data_Year": 2022,
+      "data_Supplier": "PQR Ltd",
+      "data_Emissions": 290,
+      "data_Revenue": 85000,
+      "data_E_R": 6,
+      "data_MOM": "-12%"
+    },
+    {
+      "data_Date": "16/6/22",
+      "data_Month": "Jun",
+      "data_Year": 2022,
+      "data_Supplier": "LMN Inc",
+      "data_Emissions": 700,
+      "data_Revenue": 82000,
+      "data_E_R": 9,
+      "data_MOM": "8%"
+    },
+    {
+      "data_Date": "18/7/22",
+      "data_Month": "Jul",
+      "data_Year": 2022,
+      "data_Supplier": "ABC Corp",
+      "data_Emissions": 880,
+      "data_Revenue": 78000,
+      "data_E_R": 18,
+      "data_MOM": "-6%↑"
+    },
+    {
+      "data_Date": "11/8/22",
+      "data_Month": "Aug",
+      "data_Year": 2022,
+      "data_Supplier": "XYZ Ltd",
+      "data_Emissions": 645,
+      "data_Revenue": 100000,
+      "data_E_R": 24.8,
+      "data_MOM": "15%"
+    },
+    {
+      "data_Date": "8/9/22",
+      "data_Month": "Sep",
+      "data_Year": 2022,
+      "data_Supplier": "PQR Ltd",
+      "data_Emissions": 490,
+      "data_Revenue": 90000,
+      "data_E_R": 24,
+      "data_MOM": "10%↑"
+    },
+    {
+      "data_Date": "6/10/22",
+      "data_Month": "Oct",
+      "data_Year": 2022,
+      "data_Supplier": "LMN Inc",
+      "data_Emissions": 180,
+      "data_Revenue": 80000,
+      "data_E_R": 18.5,
+      "data_MOM": "-15%"
+    },
+    {
+      "data_Date": "11/11/22",
+      "data_Month": "Nov",
+      "data_Year": 2022,
+      "data_Supplier": "ABC Corp",
+      "data_Emissions": 600,
+      "data_Revenue": 82000,
+      "data_E_R": 14,
+      "data_MOM": "8%"
+    },
+    {
+      "data_Date": "10/12/22",
+      "data_Month": "Dec",
+      "data_Year": 2022,
+      "data_Supplier": "XYZ Ltd",
+      "data_Emissions": 210,
+      "data_Revenue": 85000,
+      "data_E_R": 8,
+      "data_MOM": "-12%↑"
+    }
+  ]
+}

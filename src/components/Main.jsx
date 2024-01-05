@@ -1,12 +1,136 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import styled from "styled-components";
 import PurchasedSection from "./PurchasedSection";
 import VerticalBarChart from "./VerticalBarChart";
 import BottomPart from "./BottomPart";
-import { DateRange } from "react-date-range";
+// import { DateRange } from "react-date-range";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+
+// const allData2023 = [
+//   {
+//     Date: "16/1/23",
+//     Month: "Jan",
+//     Year: 2023,
+//     Supplier: "ABC Corp",
+//     Emissions: 200,
+//     Revenue: 56789,
+//     E_R: 1.5,
+//     MOM: "10%",
+//   },
+//   {
+//     Date: "16/2/23",
+//     Month: "Feb",
+//     Year: 2023,
+//     Supplier: "Adani",
+//     Emissions: 470,
+//     Revenue: 220000,
+//     E_R: 2.5,
+//     MOM: "25%",
+//   },
+//   {
+//     Date: "17/3/23",
+//     Month: "Mar",
+//     Year: 2023,
+//     Supplier: "Reliance",
+//     Emissions: 700,
+//     Revenue: 254815,
+//     E_R: 3,
+//     MOM: "28%",
+//   },
+//   {
+//     Date: "6/4/23",
+//     Month: "Apr",
+//     Year: 2023,
+//     Supplier: "Shaurya Drugs",
+//     Emissions: 250,
+//     Revenue: 879797,
+//     E_R: 4.7,
+//     MOM: "-11%",
+//   },
+//   {
+//     Date: "12/5/23",
+//     Month: "May",
+//     Year: 2023,
+//     Supplier: "Orlife Healthcare",
+//     Emissions: 290,
+//     Revenue: 464464,
+//     E_R: 6.5,
+//     MOM: "-67%",
+//   },
+//   {
+//     Date: "16/6/23",
+//     Month: "Jun",
+//     Year: 2023,
+//     Supplier: "XYZ Ltd",
+//     Emissions: 710,
+//     Revenue: 150000,
+//     E_R: 10,
+//     MOM: "-5%",
+//   },
+//   {
+//     Date: "18/7/23",
+//     Month: "Jul",
+//     Year: 2023,
+//     Supplier: "LMN Inc",
+//     Emissions: 880,
+//     Revenue: 200000,
+//     E_R: 21,
+//     MOM: "12%",
+//   },
+//   {
+//     Date: "11/8/23",
+//     Month: "Aug",
+//     Year: 2023,
+//     Supplier: "Rezicure Pharmaceuticals",
+//     Emissions: 640,
+//     Revenue: 548582,
+//     E_R: 23,
+//     MOM: "12%",
+//   },
+//   {
+//     Date: "8/9/23",
+//     Month: "Sep",
+//     Year: 2023,
+//     Supplier: "Ruzette Organics",
+//     Emissions: 490,
+//     Revenue: 564651,
+//     E_R: 23,
+//     MOM: "-58%",
+//   },
+//   {
+//     Date: "6/10/23",
+//     Month: "Oct",
+//     Year: 2023,
+//     Supplier: "Steller Bio Labs",
+//     Emissions: 190,
+//     Revenue: 516513,
+//     E_R: 16.5,
+//     MOM: "-20%",
+//   },
+
+//   {
+//     Date: "11/8/23",
+//     Month: "Nov",
+//     Year: 2023,
+//     Supplier: "Merion Care",
+//     Emissions: 600,
+//     Revenue: 565556,
+//     E_R: 12.5,
+//     MOM: "-5%",
+//   },
+//   {
+//     Date: "10/11/23",
+//     Month: "Dec",
+//     Year: 2023,
+//     Supplier: "Eskos Pharma",
+//     Emissions: 220,
+//     Revenue: 546561,
+//     E_R: 6.5,
+//     MOM: "20%",
+//   },
+// ];
 
 const allData2023 = [
   {
@@ -17,7 +141,7 @@ const allData2023 = [
     Emissions: 200,
     Revenue: 56789,
     E_R: 1.5,
-    MOM: "10%",
+    MOM: "10%↑",
   },
   {
     Date: "16/2/23",
@@ -27,7 +151,7 @@ const allData2023 = [
     Emissions: 470,
     Revenue: 220000,
     E_R: 2.5,
-    MOM: "25%",
+    MOM: "25%↓",
   },
   {
     Date: "17/3/23",
@@ -37,7 +161,7 @@ const allData2023 = [
     Emissions: 700,
     Revenue: 254815,
     E_R: 3,
-    MOM: "28%",
+    MOM: "28%↑",
   },
   {
     Date: "6/4/23",
@@ -47,17 +171,17 @@ const allData2023 = [
     Emissions: 250,
     Revenue: 879797,
     E_R: 4.7,
-    MOM: "-11%",
+    MOM: "-11%↓",
   },
   {
     Date: "12/5/23",
     Month: "May",
     Year: 2023,
-    Supplier: "Orlife Healthcare",
+    Supplier: "Orlife",
     Emissions: 290,
     Revenue: 464464,
     E_R: 6.5,
-    MOM: "-67%",
+    MOM: "-67%↓",
   },
   {
     Date: "16/6/23",
@@ -67,7 +191,7 @@ const allData2023 = [
     Emissions: 710,
     Revenue: 150000,
     E_R: 10,
-    MOM: "-5%",
+    MOM: "-5%↑",
   },
   {
     Date: "18/7/23",
@@ -77,37 +201,37 @@ const allData2023 = [
     Emissions: 880,
     Revenue: 200000,
     E_R: 21,
-    MOM: "12%",
+    MOM: "12%↓",
   },
   {
     Date: "11/8/23",
     Month: "Aug",
     Year: 2023,
-    Supplier: "Rezicure Pharmaceuticals",
+    Supplier: "Tata",
     Emissions: 640,
     Revenue: 548582,
     E_R: 23,
-    MOM: "12%",
+    MOM: "12%↑",
   },
   {
     Date: "8/9/23",
     Month: "Sep",
     Year: 2023,
-    Supplier: "Ruzette Organics",
+    Supplier: "Ruzette",
     Emissions: 490,
     Revenue: 564651,
     E_R: 23,
-    MOM: "-58%",
+    MOM: "-58%↓",
   },
   {
     Date: "6/10/23",
     Month: "Oct",
     Year: 2023,
-    Supplier: "Steller Bio Labs",
+    Supplier: "Alibaba",
     Emissions: 190,
     Revenue: 516513,
     E_R: 16.5,
-    MOM: "-20%",
+    MOM: "-20%↑",
   },
 
   {
@@ -118,7 +242,7 @@ const allData2023 = [
     Emissions: 600,
     Revenue: 565556,
     E_R: 12.5,
-    MOM: "-5%",
+    MOM: "-5%↓",
   },
   {
     Date: "10/11/23",
@@ -128,7 +252,7 @@ const allData2023 = [
     Emissions: 220,
     Revenue: 546561,
     E_R: 6.5,
-    MOM: "20%",
+    MOM: "20%↑",
   },
 ];
 
@@ -141,7 +265,7 @@ const allData2022 = [
     Emissions: 260,
     Revenue: 80000,
     E_R: 1.5,
-    MOM: "15%",
+    MOM: "15%↑",
   },
   {
     Date: "18/2/22",
@@ -151,7 +275,7 @@ const allData2022 = [
     Emissions: 595,
     Revenue: 90000,
     E_R: 2.8,
-    MOM: "10%",
+    MOM: "10%↑",
   },
   {
     Date: "22/3/22",
@@ -171,7 +295,7 @@ const allData2022 = [
     Emissions: 260,
     Revenue: 70000,
     E_R: 5,
-    MOM: "5%",
+    MOM: "5%↑",
   },
   {
     Date: "12/5/22",
@@ -201,7 +325,7 @@ const allData2022 = [
     Emissions: 880,
     Revenue: 78000,
     E_R: 18,
-    MOM: "-6%",
+    MOM: "-6%↑",
   },
   {
     Date: "11/8/22",
@@ -221,7 +345,7 @@ const allData2022 = [
     Emissions: 490,
     Revenue: 90000,
     E_R: 24,
-    MOM: "10%",
+    MOM: "10%↑",
   },
   {
     Date: "6/10/22",
@@ -251,7 +375,7 @@ const allData2022 = [
     Emissions: 210,
     Revenue: 85000,
     E_R: 8,
-    MOM: "-12%",
+    MOM: "-12%↑",
   },
 ];
 
@@ -262,6 +386,7 @@ function Main() {
   const [startDate, setStartDate] = useState(defaultStartDate);
   const [endDate, setEndDate] = useState(defaultEndDate);
   const [showDatePickers, setShowDatePickers] = useState(false);
+  const [filteredData, setFilteredData] = useState([]);
 
   const handleDateChange = (date, isStartDate) => {
     if (isStartDate) {
@@ -274,6 +399,21 @@ function Main() {
   const handleSpanClick = () => {
     setShowDatePickers((prev) => !prev);
   };
+
+  const filterDataByDate = () => {
+    if (startDate && endDate) {
+      const data = allData2023.filter((item) => {
+        const itemData = new Date(item.Date);
+        return itemData >= startDate && itemData <= endDate;
+      });
+      setFilteredData(data);
+    }
+  };
+  console.log(filteredData, ">>>>>>>>>");
+
+  useEffect(() => {
+    filterDataByDate();
+  }, [startDate, endDate, allData2023]);
 
   return (
     <div>
@@ -341,7 +481,7 @@ function Main() {
       </DATE>
       <PurchasedSection />
       <VerticalBarChart allData2022={allData2022} allData2023={allData2023} />
-      <BottomPart />
+      <BottomPart allData2023={allData2023} />
     </div>
   );
 }
