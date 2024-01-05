@@ -295,8 +295,8 @@ function Main() {
   // console.log(filteredData, ">>>>>>>>>");
 
   useEffect(() => {
-    dispatch(getData());
-    filterDataByDate();
+    // dispatch(getData());
+    // filterDataByDate();
   }, [startDate, endDate, allData2023]);
 
   return (
