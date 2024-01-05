@@ -61,6 +61,7 @@ const BottomContainer = styled.div`
   display: flex;
   margin-left: 30px;
   margin-top: 17px;
+  margin-bottom: 20px;
 `;
 
 const LeftPart = styled.div`

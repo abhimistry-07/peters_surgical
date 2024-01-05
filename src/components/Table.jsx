@@ -2,6 +2,27 @@ import React from "react";
 import styled from "styled-components";
 
 function Table({ allData2023 }) {
+  const ColorForPercentage = ({ allData2023 }) => {
+    return (
+      <>
+        {allData2023?.map((item, index) => {
+          const textColor = item.MOM.includes("↑") ? "#FF0000D6" : "#008C58";
+
+          const textStyle = { color: textColor };
+
+          return (
+            <TableRow key={index}>
+              <TableCell>{item.Supplier}</TableCell>
+              <TableCell>{item.Year}</TableCell>
+              <TableCell>{item.E_R}</TableCell>
+              <TableCell style={textStyle}>{item.MOM}</TableCell>
+            </TableRow>
+          );
+        })}
+      </>
+    );
+  };
+
   return (
     <DIV>
       <div className="upperContainer">
@@ -79,14 +100,15 @@ function Table({ allData2023 }) {
             </TableRow>
           </thead>
           <tbody>
-            {allData2023?.map((item, index) => (
+            {/* {allData2023?.map((item, index) => (
               <TableRow key={index}>
                 <TableCell>{item.Supplier}</TableCell>
                 <TableCell>{item.Year}</TableCell>
                 <TableCell>{item.E_R}</TableCell>
-                <TableCell>{item.MOM}</TableCell>
+                <TableCell style={textStyle}>{item.MOM}</TableCell>
               </TableRow>
-            ))}
+            ))} */}
+            <ColorForPercentage allData2023={allData2023} />
           </tbody>
         </Table1>
       </TableContainer>

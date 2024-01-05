@@ -299,13 +299,13 @@ const PieContainer = styled.div`
   .lowerContainer {
     margin-top: 20px;
     width: 100%;
-    /* height: 166.406px; */
+    height: 350px;
     display: flex;
     align-items: center;
     justify-content: center;
 
     .doughnut {
-      width: 90%;
+      width: 60%;
     }
   }
 `;
