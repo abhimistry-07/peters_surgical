@@ -294,10 +294,10 @@ function Main() {
   };
   // console.log(filteredData, ">>>>>>>>>");
 
-  useEffect(() => {
-    // dispatch(getData());
-    // filterDataByDate();
-  }, [startDate, endDate, allData2023]);
+  // useEffect(() => {
+  //   // dispatch(getData());
+  //   // filterDataByDate();
+  // }, [startDate, endDate, allData2023]);
 
   return (
     <div>
