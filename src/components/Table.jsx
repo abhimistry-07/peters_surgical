@@ -79,7 +79,7 @@ function Table({ allData2023 }) {
             </TableRow>
           </thead>
           <tbody>
-            {allData2023.map((item, index) => (
+            {allData2023?.map((item, index) => (
               <TableRow key={index}>
                 <TableCell>{item.Supplier}</TableCell>
                 <TableCell>{item.Year}</TableCell>

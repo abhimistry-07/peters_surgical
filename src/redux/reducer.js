@@ -1,4 +1,4 @@
-import { DATA_FAILURE, DATA_REQUEST, DATA_SUCCESS } from "./actionTypes";
+import { DATA_FAILURE, DATA_REQUEST, DATA_SUCCESS2022, DATA_SUCCESS2023, } from "./actionTypes";
 
 const initialState = {
     isLoading: false,
@@ -13,8 +13,11 @@ export const reducer = (state = initialState, {
         case DATA_REQUEST:
             return { ...state, isLoading: true }
 
-        case DATA_SUCCESS:
-            return { ...state, isLoading: false, data: payload }
+        case DATA_SUCCESS2022:
+            return { ...state, isLoading: false, data2022: payload }
+
+        case DATA_SUCCESS2023:
+            return { ...state, isLoading: false, data2023: payload }
 
         case DATA_FAILURE:
             return { ...state, isLoading: false, isError: true }

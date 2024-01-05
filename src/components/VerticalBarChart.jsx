@@ -69,11 +69,11 @@ function VerticalBarChart({ allData2023, allData2022 }) {
   };
 
   const data = {
-    labels: allData2023.map((data) => data.Month),
+    labels: allData2023?.map((data) => data.Month),
     datasets: [
       {
         label: "E/R-2023",
-        data: allData2023.map((data) => data.E_R),
+        data: allData2023?.map((data) => data.E_R),
         backgroundColor: "yellow",
         type: "line",
         borderColor: "yellow",
@@ -81,7 +81,7 @@ function VerticalBarChart({ allData2023, allData2022 }) {
       },
       {
         label: "E/R-2022",
-        data: allData2022.map((data) => data.E_R),
+        data: allData2022?.map((data) => data.E_R),
         backgroundColor: "red",
         type: "line",
         borderColor: "red",
@@ -89,12 +89,12 @@ function VerticalBarChart({ allData2023, allData2022 }) {
       },
       {
         label: "Emissions 2023",
-        data: allData2023.map((data) => data.Emissions),
+        data: allData2023?.map((data) => data.Emissions),
         backgroundColor: "#5470C6",
       },
       {
         label: "Emissions 2022",
-        data: allData2022.map((data) => data.Emissions),
+        data: allData2022?.map((data) => data.Emissions),
         backgroundColor: "#91CC75",
       },
     ],

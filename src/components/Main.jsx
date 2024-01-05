@@ -7,130 +7,8 @@ import BottomPart from "./BottomPart";
 // import { DateRange } from "react-date-range";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-
-// const allData2023 = [
-//   {
-//     Date: "16/1/23",
-//     Month: "Jan",
-//     Year: 2023,
-//     Supplier: "ABC Corp",
-//     Emissions: 200,
-//     Revenue: 56789,
-//     E_R: 1.5,
-//     MOM: "10%",
-//   },
-//   {
-//     Date: "16/2/23",
-//     Month: "Feb",
-//     Year: 2023,
-//     Supplier: "Adani",
-//     Emissions: 470,
-//     Revenue: 220000,
-//     E_R: 2.5,
-//     MOM: "25%",
-//   },
-//   {
-//     Date: "17/3/23",
-//     Month: "Mar",
-//     Year: 2023,
-//     Supplier: "Reliance",
-//     Emissions: 700,
-//     Revenue: 254815,
-//     E_R: 3,
-//     MOM: "28%",
-//   },
-//   {
-//     Date: "6/4/23",
-//     Month: "Apr",
-//     Year: 2023,
-//     Supplier: "Shaurya Drugs",
-//     Emissions: 250,
-//     Revenue: 879797,
-//     E_R: 4.7,
-//     MOM: "-11%",
-//   },
-//   {
-//     Date: "12/5/23",
-//     Month: "May",
-//     Year: 2023,
-//     Supplier: "Orlife Healthcare",
-//     Emissions: 290,
-//     Revenue: 464464,
-//     E_R: 6.5,
-//     MOM: "-67%",
-//   },
-//   {
-//     Date: "16/6/23",
-//     Month: "Jun",
-//     Year: 2023,
-//     Supplier: "XYZ Ltd",
-//     Emissions: 710,
-//     Revenue: 150000,
-//     E_R: 10,
-//     MOM: "-5%",
-//   },
-//   {
-//     Date: "18/7/23",
-//     Month: "Jul",
-//     Year: 2023,
-//     Supplier: "LMN Inc",
-//     Emissions: 880,
-//     Revenue: 200000,
-//     E_R: 21,
-//     MOM: "12%",
-//   },
-//   {
-//     Date: "11/8/23",
-//     Month: "Aug",
-//     Year: 2023,
-//     Supplier: "Rezicure Pharmaceuticals",
-//     Emissions: 640,
-//     Revenue: 548582,
-//     E_R: 23,
-//     MOM: "12%",
-//   },
-//   {
-//     Date: "8/9/23",
-//     Month: "Sep",
-//     Year: 2023,
-//     Supplier: "Ruzette Organics",
-//     Emissions: 490,
-//     Revenue: 564651,
-//     E_R: 23,
-//     MOM: "-58%",
-//   },
-//   {
-//     Date: "6/10/23",
-//     Month: "Oct",
-//     Year: 2023,
-//     Supplier: "Steller Bio Labs",
-//     Emissions: 190,
-//     Revenue: 516513,
-//     E_R: 16.5,
-//     MOM: "-20%",
-//   },
-
-//   {
-//     Date: "11/8/23",
-//     Month: "Nov",
-//     Year: 2023,
-//     Supplier: "Merion Care",
-//     Emissions: 600,
-//     Revenue: 565556,
-//     E_R: 12.5,
-//     MOM: "-5%",
-//   },
-//   {
-//     Date: "10/11/23",
-//     Month: "Dec",
-//     Year: 2023,
-//     Supplier: "Eskos Pharma",
-//     Emissions: 220,
-//     Revenue: 546561,
-//     E_R: 6.5,
-//     MOM: "20%",
-//   },
-// ];
+import { useDispatch, useSelector } from "react-redux";
+import { getData } from "../redux/action";
 
 const allData2023 = [
   {
@@ -382,11 +260,16 @@ const allData2022 = [
 function Main() {
   const defaultStartDate = new Date("2023-03-01");
   const defaultEndDate = new Date("2023-04-30");
-
   const [startDate, setStartDate] = useState(defaultStartDate);
   const [endDate, setEndDate] = useState(defaultEndDate);
   const [showDatePickers, setShowDatePickers] = useState(false);
   const [filteredData, setFilteredData] = useState([]);
+
+  // const allData2023 = useSelector((store) => store.data2023);
+
+  // console.log(allData2023, ">>>>>>>");
+
+  const dispatch = useDispatch();
 
   const handleDateChange = (date, isStartDate) => {
     if (isStartDate) {
@@ -409,9 +292,10 @@ function Main() {
       setFilteredData(data);
     }
   };
-  console.log(filteredData, ">>>>>>>>>");
+  // console.log(filteredData, ">>>>>>>>>");
 
   useEffect(() => {
+    dispatch(getData());
     filterDataByDate();
   }, [startDate, endDate, allData2023]);
 

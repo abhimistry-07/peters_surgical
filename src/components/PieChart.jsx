@@ -132,11 +132,11 @@ function PieChart() {
   ];
 
   const data = {
-    labels: allData2023.map((data) => data.Supplier),
+    labels: allData2023?.map((data) => data.Supplier),
     datasets: [
       {
         label: "CO2e",
-        data: allData2023.map((data) => data.Emissions),
+        data: allData2023?.map((data) => data.Emissions),
         backgroundColor: [
           "#3BB85E",
           "#B54F69",
