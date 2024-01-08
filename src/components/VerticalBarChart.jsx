@@ -1,30 +1,34 @@
 import React from "react";
-import {
-  Chart as ChartJS,
-  ArcElement,
-  Tooltip,
-  Legend,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  PointElement,
-  LineElement,
-} from "chart.js";
+// import {
+//   Chart as ChartJS,
+//   ArcElement,
+//   Tooltip,
+//   Legend,
+//   CategoryScale,
+//   LinearScale,
+//   BarElement,
+//   Title,
+//   PointElement,
+//   LineElement,
+//   LineController,
+// } from "chart.js";
+
+import Chart from "chart.js/auto";
 import { Bar } from "react-chartjs-2";
 import styled from "styled-components";
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
-  ArcElement,
-  PointElement,
-  LineElement
-);
+// ChartJS.register(
+//   CategoryScale,
+//   LinearScale,
+//   BarElement,
+//   Title,
+//   Tooltip,
+//   Legend,
+//   ArcElement,
+//   PointElement,
+//   LineElement,
+//   LineController
+// );
 
 function VerticalBarChart({ allData2023, allData2022 }) {
   const options = {
@@ -127,7 +131,6 @@ const Container = styled.div`
     display: flex;
     /* border: 1px solid red; */
     padding: 20px 0px 10px 20px;
-    
   }
 
   /* .bar {
